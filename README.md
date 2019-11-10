@@ -20,3 +20,6 @@
 11. Copy secret key generated in step 1
 12. Choose the event you's like
 13. Hit Add webhook
+
+## Used in
+* [Topaz](https://github.com/Naresh1318/Topaz)
