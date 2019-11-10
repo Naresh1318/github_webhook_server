@@ -1,7 +1,7 @@
 # Github Webhook Server
 
 <p align=center>
-    <img src="https://files.naresh1318.com/public/github_webhook_server/logo.png" alt="webhook_logo"/>
+    <img src="https://files.naresh1318.com/public/github_webhook_server/logo.png" width="200px" alt="webhook_logo"/>
     <p align="center"> <b>Receives github webhook requests, authenticates them and runs the required deployment script</b> </p>
 </p>
 
