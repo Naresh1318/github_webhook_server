@@ -5,20 +5,20 @@ from flask import request, Flask
 
 app = Flask(__name__)
 
+webhook_endpoint = "/github/topaz"
+deployment_script = "./deployment_script/topaz.sh"
+github_webhook_path = "./github_webhook_keys.txt"
 
-@app.route("/github/topaz", methods=["POST"])
+
+@app.route(webhook_endpoint, methods=["POST"])
 def topaz():
     """
     POST request from github received on push to master
-
-    Returns:
 
     """
     import hmac
     import hashlib
 
-    deployment_script = "./deployment_script/topaz.sh"
-    github_webhook_path = "./github_webhook_keys.txt"
     with open(github_webhook_path) as f:
         # I don't really know why, but, \n is not removed when using readline when deployed on server
         local_key = f.read()
