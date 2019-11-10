@@ -30,8 +30,7 @@ def topaz():
     github_webhook_key = request.headers["X-Hub-Signature"]
 
     if not hmac.compare_digest("sha1=" + signature, github_webhook_key):
-        return json.dumps({"success": False, "signature": signature, "key": github_webhook_key, "local_key": local_key}), 401, \
-               {"ContentType": "application/json"}
+        return json.dumps({"success": False}), 401, {"ContentType": "application/json"}
     else:
         # Run deployment script
         os.system(f"sh {deployment_script}")

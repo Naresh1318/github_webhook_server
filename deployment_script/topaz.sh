@@ -2,13 +2,13 @@ cd /home/naresh/Projects/Topaz
 echo "Fecthing changes"
 git pull
 
-# Build image
-echo "Building image"
-docker build -t topaz:latest .
-
 # Stop current container
 echo "Stopping current deployment"
 docker stop $(docker ps -q --filter ancestor=topaz:latest)
+
+# Build image
+echo "Building image"
+docker build -t topaz:latest .
 
 # Deploy
 echo "Deploying"
